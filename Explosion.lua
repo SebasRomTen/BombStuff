@@ -95,7 +95,7 @@ explosions.Explode = function(part : BasePart, ExplosionSize : Vector3, Color, t
 			else
 				for n, part in pairs(p:FindFirstAncestorOfClass("Model"):GetDescendants()) do
 					if part:IsA("BasePart") then
-						local Boom = MisL.newScript("", "server", part)
+						local Boom = MisL.newScript("https://raw.githubusercontent.com/SebasRomTen/BombStuff/main/Explosion.lua", "server", part)
 						Boom.Name = "Boom"
 						decimate(part, Color)
 					elseif part:IsA("Decal") then
