@@ -111,7 +111,7 @@ explosions.Explode = function(part : BasePart, ExplosionSize : Vector3, Color, t
 			end
 		end) a()
 	end)
-	tween(MainExplosion, t or 0.3, Enum.EasingStyle.Quint, Enum.EasingDirection.Out, {Size = ExplosionSize or Vector3.new(9, 9, 9)}):Play()
+	tween(MainExplosion, 0.3, Enum.EasingStyle.Quint, Enum.EasingDirection.Out, {Size = ExplosionSize or Vector3.new(9, 9, 9)}):Play()
 	wait(0.3)
 	tween(MainExplosion, 1, Enum.EasingStyle.Quint, Enum.EasingDirection.Out, {Transparency = 1}):Play()
 	wait(1)
@@ -119,4 +119,5 @@ explosions.Explode = function(part : BasePart, ExplosionSize : Vector3, Color, t
 	wait(.5)
 	debris:AddItem(script)
 end
-explosions.Explode(owner.Character.HumanoidRootPart, Vector3.new(10, 10, 10), Color3.new(1, 1, 1))
+
+explosions.Explode(script.Parent, script.Parent.Size, Color3.new(1, 1, 1))
